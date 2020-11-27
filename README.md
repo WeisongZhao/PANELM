@@ -1,6 +1,6 @@
 <p>
 <h1 align="center">PANEL<font color="red">M</font></h1>
-<h5 align="center">Pixel-level ANalysis of Error Locations (or resolution) with FIJI/ImageJ.</h5>
+<h5 align="center">Pixel-level ANalysis of Error Locations (or resolution) with Matlab.</h5>
 </p>
 </br>
 <p>
