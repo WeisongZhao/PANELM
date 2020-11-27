@@ -12,7 +12,6 @@ stackraw = stackraw(8 + 1:end-8,8 + 1:end-8,:);
     = PANEL(stack,'LRstack',stackraw,'pixelSize'...
     ,10/1000,'skip',1,'boundaryintensity',15,'blocksize',64,'EnableRSM',false);
 %%
-PANELs=RGBnor(RSM,FRCMap);
 figure(1)
 subplot(1,2,1)
 imshow(stackraw(8 + 1:end-8,8 + 1:end-8,1),[])
