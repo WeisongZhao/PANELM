@@ -20,10 +20,6 @@ If you find this useful, please cite the paper.
 </p>
 
 
-<p align='center'>
-<img src='/img/PANELJ2.png' align="center" width=700>
-</p>
-
 ## Declaration
 This repository contains the Maltab source code (Maven) for <b>PANEL</b> . 
 
