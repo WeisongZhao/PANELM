@@ -1,5 +1,6 @@
 <p>
 <h1 align="center">PANEL<font color="red">M</font></h1>
+<h6 align="right">v0.3.0</h6>
 <h5 align="center">Pixel-level ANalysis of Error Locations (or resolution) with Matlab.</h5>
 </p>
 </br>
@@ -8,8 +9,8 @@
 </p>
 
 </br>
-If you find this useful, please cite the paper.
-<b>Weisong Zhao et al. PANEL (2021) .........</b>
+Pixel-level ANalysis of Error Locations (or resolution) with Matlab is distributed as accompanying software for manuscript: 
+<b>Weisong Zhao et al. PANEL (2021) .........</b> Please cite PANEL in your publications, if it helps your research.
 </br>
 </br>
 </br>
