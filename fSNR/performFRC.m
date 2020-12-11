@@ -1,4 +1,4 @@
-function [ FRC, threeSigma, fiveSigma] =  performFRC(fftA, fftB, h, w, theta)
+function [ FRC, twoSigma,threeSigma, fiveSigma] =  performFRC(fftA, fftB, h, w, theta)
 % [FRC, threeSigma, fiveSigma] =  performFRC(fftA, fftB, h, w)
 %
 % Calculates FRC curve; 3Sigma and 5Sigma threshold curves
@@ -9,6 +9,7 @@ yc = ceil((h+1)./2);
 rMax = min( w - xc, h - yc);
 FRC.smallAngles = zeros(rMax+1,1,'single');
 FRC.largeAngles = zeros(rMax+1,1,'single');
+twoSigma = zeros(rMax+1,1,'single');
 threeSigma = zeros(rMax+1,1,'single');
 fiveSigma = zeros(rMax+1,1,'single');
 
@@ -42,6 +43,7 @@ for r = 0 : rMax
                 end
                 
                 %need to compute threshold curves
+                twoSigma(r+1) = twoSigma(r+1) + 1;
                 threeSigma(r+1) = threeSigma(r+1) + 1;
                 fiveSigma(r+1) = fiveSigma(r+1) + 1;
                 
@@ -56,16 +58,19 @@ end
 
 %compute threshold curves
 for r = 0 : rMax
-    
+    twoSigma(r+1) = 2 / (sqrt(twoSigma(r+1)/2));
     threeSigma(r+1) = 3 / (sqrt(threeSigma(r+1)/2));
     fiveSigma(r+1) = 5 / (sqrt(fiveSigma(r+1)/2));
     
-    if(threeSigma(r+1) > 1)
-        threeSigma(r+1) = 1;
-    end
-    if(fiveSigma(r+1) > 1)
-        fiveSigma(r+1) = 1;
-    end
+    %     if(threeSigma(r+1) > 1)
+    %         threeSigma(r+1) = 1;
+    %     end
+    %     if(fiveSigma(r+1) > 1)
+    %         fiveSigma(r+1) = 1;
+    %     end
+    
 end
-
+threeSigma(threeSigma>1)=0;
+fiveSigma(fiveSigma>1)=0;
+twoSigma(twoSigma>1)=0;
 end

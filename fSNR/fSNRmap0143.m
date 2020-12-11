@@ -1,4 +1,5 @@
-function [xv,yv,v]=fSNRmap(stackraw,params)
+function [xv,yv,v]=fSNRmap0143(stackraw,params)
+% using 1/7 threshold
 [ox,oy,~]=size(stackraw);
 bsize=params.blocksize;
 if mod(bsize,2)~=0
@@ -30,40 +31,25 @@ for i=1:params.skip:ox
             a=a./max(a(:));
             b=b./max(b(:));
             FRCresult= FRCAnalysis(a, b,params);
-            %             ifmask(1)=(FRCresult.Resolution.fixedThreshold_largeAngles);
-            ifmask(1)=(FRCresult.Resolution.twoSigma_largeAngles);
+            ifmask(1)=(FRCresult.Resolution.fixedThreshold_largeAngles);
             ifmask(2)=(FRCresult.Resolution.threeSigma_largeAngles);
-            ifmask(3)=(FRCresult.Resolution.fiveSigma_largeAngles);
             
-            minres = ifmask(2);
+            minres = ifmask(1);
             if isnan(minres)
-                minres = ifmask(3);
+                minres = ifmask(2);
                 if params.enableSingleFrame ~= 1
-                    minres = minres / (5/3);
-                end
-            end
-            if isnan(minres)
-                minres = ifmask(1);
-                if params.enableSingleFrame ~= 1
-                    minres = minres / (2/3);
+                    minres = minres/1.1;
                 end
             end
             
             if params.enableSingleFrame
-                point = FRCresult.CutOff.threeSigma_largeAngles/ length(FRCresult.ThreeSigma);
-                
+                point=FRCresult.CutOff.fixedThreshold_largeAngles/ length(FRCresult.FixedThreshold);
                 if isnan(point)
-                    point=FRCresult.CutOff.fiveSigma_largeAngles/ length(FRCresult.FiveSigma);
+                    point=FRCresult.CutOff.threeSigma_largeAngles/ length(FRCresult.ThreeSigma);
+                    minres=minres/correction(point)/(1.1);
                 else
                     minres=minres/correction(point);
                 end
-                if isnan(point)
-                    point=FRCresult.CutOff.twoSigma_largeAngles/ length(FRCresult.TwoSigma);
-                    minres=minres/correction(point)/(2/3);
-                else
-                    minres=minres/correction(point)/(5/3);
-                end
-                
             end
             
             if isnan(minres)==0

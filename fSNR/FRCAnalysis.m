@@ -77,7 +77,7 @@ try
         fftA = fftshift(fft2(tmpIm1 .* Hm));
         fftB = fftshift(fft2(tmpIm2 .* Hm));
         
-        [FRC, threeSigma, fiveSigma] =  performFRC(fftA, fftB, h, w,params.theta );
+        [FRC,twoSigma, threeSigma, fiveSigma] =  performFRC(fftA, fftB, h, w,params.theta );
         
         sFRC.smallAngles =  meanFilter(FRC.smallAngles, params.meanFilterWidth);         % smooth FRC via mean filter
         sFRC.largeAngles =  meanFilter(FRC.largeAngles, params.meanFilterWidth);
@@ -90,6 +90,7 @@ try
         cutOff.threeSigma_smallAngles =  findIntercept(sFRC.smallAngles, threeSigma);
         cutOff.fiveSigma_smallAngles =  findIntercept(sFRC.smallAngles, fiveSigma);
         cutOff.fixedThreshold_largeAngles =  findIntercept(sFRC.largeAngles, fixedThreshold);
+        cutOff.twoSigma_largeAngles =  findIntercept(sFRC.largeAngles, twoSigma);
         cutOff.threeSigma_largeAngles =  findIntercept(sFRC.largeAngles, threeSigma);
         cutOff.fiveSigma_largeAngles =  findIntercept(sFRC.largeAngles, fiveSigma);
         
@@ -105,6 +106,7 @@ try
         result.Shift = Shift;
         result.PixelSize = params.pixelSize;
         result. MeanFilterWidth = params.meanFilterWidth;
+        result.TwoSigma = twoSigma;
         result.ThreeSigma = threeSigma;
         result.FiveSigma = fiveSigma;
         result.FixedThreshold = fixedThreshold;

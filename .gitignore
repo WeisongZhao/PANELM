@@ -1,5 +1,6 @@
 *.Java
 *.java
-/fused-MT-pan
-MT SMLM Large - 4096 x 4096_pixelsize10nm.tif
-WF.tif
+HDSMLM_20nmpixel_background_15.tif
+LDSMLM_20nmpixel_background_15.tif
+HDWF.tif
+LDWF.tif

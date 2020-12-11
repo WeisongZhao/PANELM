@@ -23,6 +23,7 @@ params.enableSingleFrame = false;
 params.boundary = true;
 params.amedianfilter = true;
 params.LRstack = zeros(size(SRstack));
+params.EnableOstu = true;
 %%
 addpath('.\Utils')
 addpath('.\fSNR')
@@ -85,7 +86,7 @@ disp('High-resolution fSNR estimation...')
 FRCMap = fSNR_stack(single(SR),params);
 
 disp('Essemble...')
-PANELs=RGBnor(RSM,FRCMap);
+PANELs=RGBnor(RSM,FRCMap,params.EnableOstu);
 
 inter=FRCMap;
 inter(inter==0) = max(inter(:));
