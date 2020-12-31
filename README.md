@@ -3,17 +3,17 @@
 <h6 align="right">v0.3.0</h6>
 <h5 align="center">Pixel-level ANalysis of Error Locations (or resolution) with Matlab.</h5>
 </p>
-</br>
+<br>
 <p>
 <img src='/img/MATLAB.jpg' align="left" width=110>
 </p>
 
-</br>
+<br>
 Pixel-level ANalysis of Error Locations (or resolution) with Matlab is distributed as accompanying software for manuscript: 
 <b>Weisong Zhao et al. PANEL (2021) .........</b> Please cite PANEL in your publications, if it helps your research.
-</br>
-</br>
-</br>
+<br>
+<br>
+<br>
 
 ## PANELM for error mapping
 <p align='center'>
