@@ -8,7 +8,8 @@ stackraw(:,:,2) = stackraw(:,:,1);
 %%
 [FRCMap,PANELs,RSM,absolute_value,SR_convolve_rsf]...
     = PANEL(stack,'LRstack',stackraw,'pixelSize',20/1000, ...
-    'skip',1,'boundaryintensity',15,'blocksize',64,'EnableRSM',false,'EnableOstu',false);
+    'skip',1,'boundaryintensity',15,'blocksize',64,'EnableRSM',false,...
+    'EnableOstu',false);
 %%
 figure(1)
 subplot(1,2,1)

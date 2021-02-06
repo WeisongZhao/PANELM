@@ -5,7 +5,7 @@
 </p>
 <br>
 <p>
-<img src='/img/MATLAB.jpg' align="left" width=110>
+<img src='./img/MATLAB.jpg' align="left" width=110>
 </p>
 
 <br>
@@ -17,7 +17,7 @@ Pixel-level ANalysis of Error Locations (or resolution) with Matlab is distribut
 
 ## PANELM for error mapping
 <p align='center'>
-<img src='/img/PANELM.png' align="center" width=900>
+<img src='./img/PANELM.png' align="center" width=900>
 </p>
 
 
