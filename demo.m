@@ -1,19 +1,16 @@
 clear;clc;close all;
-addpath('.\Utils')
-addpath('.\fSNR')
-addpath('.\RSM')
+%%
 stack = imreadstack('HDSMLM_20nmpixel_background_15.tif');
-stackraw(:,:,1) = double(imread('HDWF.tif'));
-stackraw(:,:,2) = stackraw(:,:,1);
+stackWF = imreadstack('HDWF.tif');
 %%
 [FRCMap,PANELs,RSM,absolute_value,SR_convolve_rsf]...
-    = PANEL(stack,'LRstack',stackraw,'pixelSize',20/1000, ...
-    'skip',2,'boundaryintensity',15,'blocksize',64,'EnableRSM',false,...
+    = PANEL(stack,'LRstack',stackWF,'pixelSize',20/1000, ...
+    'skip',1,'boundaryintensity',15,'blocksize',64,'EnableRSM',true,...
     'EnableOstu',false,'enableSingleFrame',false);
 %%
 figure(1)
 subplot(1,2,1)
-imshow(stackraw(:,:,1),[])
+imshow(stackWF(:,:,1),[])
 title(['Low resolution']);
 subplot(1,2,2)
 imshow(stack(:,:,1),[],'color',hot)
