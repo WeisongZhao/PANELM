@@ -6,7 +6,7 @@ stackWF = imreadstack('HDWF.tif');
 [FRCMap,PANELs,RSM,absolute_value,SR_convolve_rsf]...
     = PANEL(stack,'LRstack',stackWF,'pixelSize',20/1000, ...
     'skip',1,'boundaryintensity',15,'blocksize',64,'EnableRSM',true,...
-    'EnableOstu',false,'enableSingleFrame',false);
+    'EnableOtsu',false,'enableSingleFrame',false);
 %%
 figure(1)
 subplot(1,2,1)
@@ -33,5 +33,4 @@ subplot(1,3,3)
 imshow(PANELs)
 title(['Full PANEL']);
 suptitle('PANELM - Pixel-level ANalysising of Error Locations with Matlab');
-
 

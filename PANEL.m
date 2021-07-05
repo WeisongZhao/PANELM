@@ -1,5 +1,62 @@
 function [FRCMap,PANELs,RSM,absolute_value,SR_convolve_rsf]...
     = PANEL(SRstack,varargin)
+%***************************************************************************
+% PANEL
+%***************************************************************************
+% function [FRCMap,PANELs,RSM,absolute_value,SR_convolve_rsf]
+% = PANEL(SRstack,varargin)
+%-----------------------------------------------
+%Source code for rFRC map and RSM error mapping
+%SRstack    input data to be evaluated
+%varargin   configurations
+%------------------------------------------------
+%***************************Configurations***********************************
+%-------image property----------
+%LRstack  |  the corresponding LR input {default: zeros(size(SRstack))}
+%lowdose  |  whether the input LR is under low SNR {default: false}
+%preblur2LR  |  the pre Gaussian filter size on the input LR {default: 3}
+%pixelSize  |  pixel size in micron {default: 0.0325}
+%boundaryintensity  | background intensity (0~255 range, 8bit) {default: 5}
+%EnableRSM  |  if estimate the RSM {default: true}
+%IS3D  |  if the input SR is 3D {default: false}
+%-----------rFRC----------------
+%driftCorrection  |  if do drift correction {default: false}
+%blocksize  |  rFRC block size {default: 64}
+%skip  |  skip size to accelerate {default: 1}
+%enableSingleFrame  |  whether enable single frame FRC {default: false}
+%boundary  |  whether calculate background {default: true}
+%amedianfilter  |  whether do adaptive filter after rFRC mapping {default: false}
+%EnableOstu  |  whether enable otsu filter in PANEL merging {default: true}
+%***************************************************************************
+%Output:
+%  rFRC map, Full PANEL, RSM, metrics, SRstack convoluted by RSF
+%***************************************************************************
+% Written by WeisongZhao @ zhaoweisong950713@163.com
+% Version 0.3.0
+% if any bugs is found, please just email me or put an issue on the github.
+%***************************************************************************
+% https://github.com/WeisongZhao/PANELM/
+% *********************************************************************************
+% It is a part of publication:
+% Weisong Zhao et al. PANEL: quantitatively mapping reconstruction errors in
+% super-resolution scale via rolling Fourier ring correlation,
+% Nature Methods, X, XXX-XXX (2022).
+% *********************************************************************************
+%    Copyright 2019~2021 Weisong Zhao et al.
+%
+%    This program is free software: you can redistribute it and/or modify
+%    it under the terms of the Open Data Commons Open Database License v1.0.
+%
+%    This program is distributed in the hope that it will be useful,
+%    but WITHOUT ANY WARRANTY; without even the implied warranty of
+%    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+%    Open Data Commons Open Database License for more details.
+%
+%    You should have received a copy of the
+%    Open Data Commons Open Database License
+%    along with this program.  If not, see:
+%    <https://opendatacommons.org/licenses/odbl/>.
+%***************************************************************************
 %-------image property----------
 % if low SNR LR
 params.lowdose = false;
@@ -12,18 +69,15 @@ params.boundaryintensity = 5;
 params.EnableRSM = true;
 % if 3D
 params.IS3D = false;
-%-----------tSNR----------------
-% drift para
+%-----------rFRC----------------
 params.driftCorrection = false;
-% FRC map para
 params.blocksize = 64;
 params.skip = 1;
 params.enableSingleFrame = false;
-% output para
 params.boundary = true;
 params.amedianfilter = true;
 params.LRstack = zeros(size(SRstack));
-params.EnableOstu = true;
+params.EnableOtsu = true;
 %%
 addpath('.\Utils')
 addpath('.\fSNR')
