@@ -5,7 +5,7 @@
 </p>
 <br>
 <p>
-<img src='./img/MATLAB.jpg' align="left" width=110>
+<img src='./img/MATLAB.jpg' align="left" width=130>
 </p>
 
 <br>
