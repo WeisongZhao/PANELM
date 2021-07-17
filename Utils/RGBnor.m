@@ -1,11 +1,11 @@
-function PANEL = RGBnor(RSM,FRCMaps,ostu)
+function PANEL = RGBnor(RSM,FRCMaps,otsu)
 RSM(RSM<0.4) = 0;
 inter = FRCMaps;
 inter(inter==0) = max(inter(:));
 minfrc = min(inter(:));
 FRCMaps = FRCMaps./minfrc - 1;
 FRCMaps(FRCMaps > 1) = 1;
-if ostu
+if otsu
     FRCMaps = FRCMaps - 0.4;
     level = graythresh(FRCMaps);
     FRCMaps(FRCMaps<level*max(FRCMaps(:))) = 0;

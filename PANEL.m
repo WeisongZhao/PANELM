@@ -25,7 +25,7 @@ function [FRCMap,PANELs,RSM,absolute_value,SR_convolve_rsf]...
 %skip  |  skip size to accelerate {default: 1}
 %enableSingleFrame  |  whether enable single frame FRC {default: false}
 %boundary  |  whether calculate background {default: true}
-%amedianfilter  |  whether do adaptive filter after rFRC mapping {default: false}
+%amedianfilter  |  whether do adaptive filter after rFRC mapping {default: true}
 %EnableOstu  |  whether enable otsu filter in PANEL merging {default: true}
 %***************************************************************************
 %Output:
@@ -140,7 +140,7 @@ disp('High-resolution fSNR estimation...')
 FRCMap = fSNR_stack(single(SR),params);
 
 disp('Essemble...')
-PANELs=RGBnor(RSM,FRCMap,params.EnableOstu);
+PANELs=RGBnor(RSM,FRCMap,params.EnableOtsu);
 
 inter=FRCMap;
 inter(inter==0) = max(inter(:));
