@@ -1,3 +1,14 @@
+
+[![website](https://img.shields.io/badge/website-up-green.svg)](https://weisongzhao.github.io/PANELM/)
+<!-- [![releases](https://img.shields.io/badge/release-v1.0.3-blue.svg)](https://github.com/WeisongZhao/PANELM/releases/tag/v1.0.3/) -->
+[![paper](https://img.shields.io/badge/paper-nat.%20methods-red.svg)](https://www.nature.com/nmeth/)<br>
+[![Github commit](https://img.shields.io/github/last-commit/WeisongZhao/PANELM)](https://github.com/WeisongZhao/PANELM/)
+[![License](https://img.shields.io/github/license/WeisongZhao/PANELM)](https://github.com/WeisongZhao/PANELM/blob/master/LICENSE/)<br>
+[![Twitter](https://img.shields.io/twitter/follow/weisong_zhao?label=weisong)](https://twitter.com/weisong_zhao/status/1370308101690118146)
+[![GitHub watchers](https://img.shields.io/github/watchers/WeisongZhao/PANELM?style=social)](https://github.com/WeisongZhao/PANELM/) 
+[![GitHub stars](https://img.shields.io/github/stars/WeisongZhao/PANELM?style=social)](https://github.com/WeisongZhao/PANELM/) 
+[![GitHub forks](https://img.shields.io/github/forks/WeisongZhao/PANELM?style=social)](https://github.com/WeisongZhao/PANELM/)
+
 <p>
 <h1 align="center">PANEL<font color="red">M</font></h1>
 <h6 align="right">v0.3.0</h6>
@@ -10,7 +21,7 @@
 
 <br>
 Pixel-level ANalysis of Error Locations (or resolution) with Matlab is distributed as accompanying software for manuscript: 
-<b>Weisong Zhao et al. PANEL: quantitatively mapping reconstruction errors at super-resolution scale by rolling Fourier ring correlation, Nature Methods, X, XXX-XXX (2022)</b>. Please cite PANEL in your publications, if it helps your research.
+<b>[Weisong Zhao et al. PANEL: quantitatively mapping reconstruction errors at super-resolution scale by rolling Fourier ring correlation, Nature Methods, X, XXX-XXX (2022)](https://www.nature.com/nmeth/)</b>. Please cite PANEL in your publications, if it helps your research.
 <br>
 <br>
 <br>
