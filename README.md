@@ -1,7 +1,7 @@
 
 [![website](https://img.shields.io/badge/website-up-green.svg)](https://weisongzhao.github.io/PANELM/)
 <!-- [![releases](https://img.shields.io/badge/release-v1.0.3-blue.svg)](https://github.com/WeisongZhao/PANELM/releases/tag/v1.0.3/) -->
-[![paper](https://img.shields.io/badge/paper-nat.%20methods-red.svg)](https://www.nature.com/nmeth/)<br>
+[![paper](https://img.shields.io/badge/paper-nat.%20methods-black.svg)](https://www.nature.com/nmeth/)
 [![Github commit](https://img.shields.io/github/last-commit/WeisongZhao/PANELM)](https://github.com/WeisongZhao/PANELM/)
 [![License](https://img.shields.io/github/license/WeisongZhao/PANELM)](https://github.com/WeisongZhao/PANELM/blob/master/LICENSE/)<br>
 [![Twitter](https://img.shields.io/twitter/follow/weisong_zhao?label=weisong)](https://twitter.com/weisong_zhao/status/1370308101690118146)
