@@ -19,8 +19,7 @@
 </p>
 
 <br>
-Pixel-level ANalysis of Error Locations (or resolution) with Matlab is distributed as accompanying software for manuscript: 
-<b>[Weisong Zhao et al. PANEL: quantitatively mapping reconstruction errors at super-resolution scale by rolling Fourier ring correlation, Nature Methods, X, XXX-XXX (2022)](https://www.nature.com/nmeth/)</b>. Please cite PANEL in your publications, if it helps your research.
+Pixel-level ANalysis of Error Locations (or resolution) with Matlab is distributed as accompanying software for manuscript: [Weisong Zhao et al. PANEL: quantitatively mapping reconstruction errors at super-resolution scale by rolling Fourier ring correlation, Nature Methods, X, XXX-XXX (2022)](https://www.nature.com/nmeth/). Please cite PANEL in your publications, if it helps your research.
 <br>
 <br>
 <br>
