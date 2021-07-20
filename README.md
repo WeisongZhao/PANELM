@@ -34,7 +34,7 @@ This repository contains the Maltab source code for <b>PANEL</b> .
 
 If you are not a Matlab user, you can have a try on the imagej version of PANEL: [PANELJ](https://github.com/WeisongZhao/PANELJ).
 
-Here is an example dataset [HDSMLM_20nmpixel_background_15.tif](https://github.com/WeisongZhao/PANELM/releases/download/v0.3.0/HDSMLM_20nmpixel_background_15.tif).
+Here is an example dataset [HDSMLM_20nmpixel_background_15.tif](https://github.com/WeisongZhao/PANELM/releases/download/v0.3.0/HDSMLM_20nmpixel_background_15.tif) and [its wide-field image](https://github.com/WeisongZhao/PANELM/releases/download/v0.3.0/HDWF.tif).
 
 ## Open source [PANELM](https://github.com/WeisongZhao/PANELM)
 This software and corresponding methods can only be used for **non-commercial** use, and they are under **Open Data Commons Open Database License v1.0**.
