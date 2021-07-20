@@ -5,7 +5,7 @@ stackLR = imreadstack('HDWF.tif');
 %% PANEL mapping
 [FRCMap,PANELs,RSM,absolute_value,SR_convolve_rsf]...
     = PANEL(stackSR,'LRstack',stackLR,'pixelSize',20/1000, ...
-    'boundaryintensity',15,'blocksize',64,'EnableOtsu',false);
+    'boundaryintensity',15,'EnableOtsu',false);
 %% visualization
 figure(1);suptitle('RAW INPUT DATA');
 subplot(1,2,1);imshow(stackLR(:,:,1),[]);title(['Low resolution']);
