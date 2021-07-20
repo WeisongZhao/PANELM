@@ -40,7 +40,7 @@ function [FRCMap,PANELs,RSM,absolute_value,SR_convolve_rsf]...
 % It is a part of publication:
 % Weisong Zhao et al. PANEL: quantitatively mapping reconstruction errors in
 % super-resolution scale via rolling Fourier ring correlation,
-% Nature Methods, X, XXX-XXX (2022).
+% Nature Methods, X, XXX-XXX (2021).
 % *********************************************************************************
 %    Copyright 2019~2021 Weisong Zhao et al.
 %
