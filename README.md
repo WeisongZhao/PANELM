@@ -10,7 +10,7 @@
 
 <p>
 <h1 align="center">PANEL<font color="red">M</font></h1>
-<h6 align="right">v0.3.0</h6>
+<h6 align="right">v0.4.5</h6>
 <h5 align="center">Pixel-level ANalysis of Error Locations (or resolution) with Matlab.</h5>
 </p>
 <br>
@@ -18,7 +18,7 @@
 <img src='./img/MATLAB.jpg' align="left" width=120>
 </p>
 
-Pixel-level ANalysis of Error Locations (or resolution) with Matlab is distributed as accompanying software for publication: [Weisong Zhao et al. PANEL: quantitatively mapping reconstruction errors at super-resolution scale by rolling Fourier ring correlation, Nature Methods, X, XXX-XXX (2021)](https://www.nature.com/nmeth/). Please cite PANEL in your publications, if it helps your research.
+Pixel-level ANalysis of Error Locations (or resolution) with Matlab is distributed as accompanying software for publication: [Weisong Zhao et al. PANEL: quantitatively mapping reconstruction errors at super-resolution scale by rolling Fourier ring correlation, Nature Methods, X, XXX-XXX (2022)](https://www.nature.com/nmeth/). Please cite PANEL in your publications, if it helps your research.
 
 <br>
 <br>
@@ -27,6 +27,13 @@ Pixel-level ANalysis of Error Locations (or resolution) with Matlab is distribut
 <p align='center'>
 <img src='./img/PANELM.png' align="center" width=900>
 </p>
+
+
+## Version
+- v0.4.5 Adaptive background threshold & parallel acceleration
+- v0.3.0 Single-frame rFRC mapping
+- v0.2.0 RSM and PANEL visualization
+- v0.1.0 Initial rFRC mapping
 
 
 ## Declaration

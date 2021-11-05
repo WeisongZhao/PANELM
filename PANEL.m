@@ -36,7 +36,7 @@ function [FRCMap,PANELs,RSM,absolute_value,SR_convolve_rsf]...
 %  rFRC map, Full PANEL, RSM, metrics, SRstack convoluted by RSF
 %***************************************************************************
 % Written by WeisongZhao @ zhaoweisong950713@163.com
-% Version 0.4.0
+% Version 0.4.5
 % if any bugs is found, please just email me or put an issue on the github.
 %***************************************************************************
 % https://github.com/WeisongZhao/PANELM/
