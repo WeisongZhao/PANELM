@@ -11,6 +11,9 @@ function [FRCMap,PANELs,RSM,absolute_value,SR_convolve_rsf]...
 %varargin   configurations
 %------------------------------------------------
 %***************************Configurations***********************************
+% ATTENTION: 
+% The 3D dataset should be pre-normalized as [0~1],
+% and slice-by-slice as input of PANEL.
 %-------image property----------
 %LRstack  |  the corresponding LR input {default: zeros(size(SRstack))}
 %lowdose  |  whether the input LR is under low SNR {default: false}
@@ -25,6 +28,7 @@ function [FRCMap,PANELs,RSM,absolute_value,SR_convolve_rsf]...
 %skip  |  skip size to accelerate {default: 1}
 %enableSingleFrame  |  whether enable single frame FRC {default: false}
 %boundary  |  whether calculate background {default: true}
+%IF_adaptive_boundary  |  whether adaptive background threshold {default: false}
 %amedianfilter  |  whether do adaptive filter after rFRC mapping {default: true}
 %EnableOstu  |  whether enable otsu filter in PANEL merging {default: true}
 %***************************************************************************
@@ -32,7 +36,7 @@ function [FRCMap,PANELs,RSM,absolute_value,SR_convolve_rsf]...
 %  rFRC map, Full PANEL, RSM, metrics, SRstack convoluted by RSF
 %***************************************************************************
 % Written by WeisongZhao @ zhaoweisong950713@163.com
-% Version 0.3.0
+% Version 0.4.0
 % if any bugs is found, please just email me or put an issue on the github.
 %***************************************************************************
 % https://github.com/WeisongZhao/PANELM/
@@ -40,9 +44,9 @@ function [FRCMap,PANELs,RSM,absolute_value,SR_convolve_rsf]...
 % It is a part of publication:
 % Weisong Zhao et al. PANEL: quantitatively mapping reconstruction errors in
 % super-resolution scale via rolling Fourier ring correlation,
-% Nature Methods, X, XXX-XXX (2021).
+% Nature Methods (2022).
 % *********************************************************************************
-%    Copyright 2019~2021 Weisong Zhao et al.
+%    Copyright 2019~2022 Weisong Zhao et al.
 %
 %    This program is free software: you can redistribute it and/or modify
 %    it under the terms of the Open Data Commons Open Database License v1.0.
@@ -75,6 +79,7 @@ params.blocksize = 64;
 params.skip = 1;
 params.enableSingleFrame = false;
 params.boundary = true;
+params.IF_adaptive_boundary = false;
 params.amedianfilter = true;
 params.LRstack = zeros(size(SRstack));
 params.EnableOtsu = true;
@@ -158,5 +163,4 @@ fprintf(strcat('Absolute score of error:', '\n', ...
 disp('PANEL estimation done, thank you for your waiting')
 
 ttime=toc;
-disp(['Total time cost: ', num2str(2 * ttime/60) ' mins' ...
-    ' for ' num2str(t-1) ' frames'])
+disp(['Total time cost: ', num2str(2 * ttime/60) ' mins'])

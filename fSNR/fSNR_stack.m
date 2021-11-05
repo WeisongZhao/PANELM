@@ -13,16 +13,17 @@ if nargin == 1
     params.enableSingleFrame = false;
     % output para
     params.boundary = true;
+    params.IF_adaptive_boundary = false;
     params.amedianfilter = true;
     params.interpolation = false;
 end
 
 % avoid error
 if params.skip >1
-    params.amedianfilter=false;
+    params.amedianfilter = false;
 end
 if mod(params.blocksize,2)~=0
-    params.blocksize=params.blocksize+1;
+    params.blocksize = params.blocksize + 1;
 end
 [ox,oy,~]=size(stack);
 if params.enableSingleFrame

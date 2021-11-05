@@ -1,38 +1,63 @@
-function [xv,yv,v]=fSNRmap0143(stackraw,params)
-% using 1/7 threshold
+function [xv,yv,v]=fSNRmap(stackraw,params)
+
 [ox,oy,~]=size(stackraw);
 bsize=params.blocksize;
 if mod(bsize,2)~=0
     bsize=bsize+1;
 end
+
+if params.IF_adaptive_boundary && params.boundary
+    background(:,:,1) = background_estimation(255 * stackraw(:,:,1));
+    background(:,:,2) = background_estimation(255 * stackraw(:,:,2));
+    background(background < 0) = 0;
+    background = background./max(background(:));
+    background = (params.boundaryintensity * 4/255) * background;
+else
+    background = ones(size(stackraw)) * params.boundaryintensity * 2/255;
+end
+
 stackraw=padarray(stackraw,[bsize/2,bsize/2,0],'symmetric');
+background=padarray(background,[bsize/2,bsize/2,0],'symmetric');
 flage=1;
-tflage=1;
-total=length(1:params.skip:ox)*length(1:params.skip:oy);
+
+% tflage=1;
+% total=length(1:params.skip:ox)*length(1:params.skip:oy);
+
 v(1)=0;
 xv(1)=1;
 yv(1)=1;
 center = params.skip - 1;
 tic
-for i=1:params.skip:ox
-    for j=1:params.skip:oy
+iindex = 1:params.skip:ox;
+jindex = 1:params.skip:oy;
+fSNR_values = zeros(length(iindex),length(jindex));
+fSNR_i = fSNR_values;
+fSNR_j = fSNR_values;
+for i_= 1:length(iindex)
+    i = iindex(i_);
+    for j_=1:length(jindex)
+        j = jindex(j_);
+        minres = 0;
         a=stackraw(i:i+bsize-1,j:j+bsize-1,1);
         b=stackraw(i:i+bsize-1,j:j+bsize-1,2);
         % aboundary=a( bsize/2-center: bsize/2+center,bsize/2-center: bsize/2+center);
         % bboundary=b( bsize/2-center: bsize/2+center,bsize/2-center: bsize/2+center);
-        aboundary=a( bsize/2: bsize/2+center,bsize/2: bsize/2+center);
-        bboundary=b( bsize/2: bsize/2+center,bsize/2: bsize/2+center);
+        aboundary=a(bsize/2: bsize/2+center,bsize/2: bsize/2+center);
+        bboundary=b(bsize/2: bsize/2+center,bsize/2: bsize/2+center);
         if params.boundary
-            threshold = params.boundaryintensity * 2/255;
-        else
-            threshold = eps * 2;
+            if ~params.IF_adaptive_boundary
+                threshold = params.boundaryintensity * 2/255;
+            else
+                threshold = mean(mean(mean(background(i+bsize/2: i+bsize/2+center,j+bsize/2: j+bsize/2+center,:))));
+            end
         end
         if mean(aboundary(:) + bboundary(:)) > threshold
             a=a./max(a(:));
             b=b./max(b(:));
             FRCresult= FRCAnalysis(a, b,params);
-            ifmask(1)=(FRCresult.Resolution.fixedThreshold_largeAngles);
-            ifmask(2)=(FRCresult.Resolution.threeSigma_largeAngles);
+            % ifmask(1)=(FRCresult.Resolution.fixedThreshold_largeAngles);
+            ifmask = [FRCresult.Resolution.fixedThreshold_largeAngles,...
+                FRCresult.Resolution.threeSigma_largeAngles];
             
             minres = ifmask(1);
             if isnan(minres)
@@ -51,33 +76,46 @@ for i=1:params.skip:ox
                     minres=minres/correction(point);
                 end
             end
-            
-            if isnan(minres)==0
-                if params.skip==1
-                    v(flage)=minres;
-                    xv(flage)=i;
-                    yv(flage)=j;
-                    flage=flage+1;
-                else
-                    for x=1:params.skip
-                        for y=1:params.skip
-                            v(flage)=minres;
-                            xv(flage)=min(i+x-1,ox);
-                            yv(flage)=min(j+y-1,oy);
-                            flage=flage+1;
-                        end
+        end
+        if isnan(minres)==0
+            fSNR_values(i_,j_) = minres;
+            fSNR_i(i_,j_) = i;
+            fSNR_j(i_,j_) = j;
+        end
+        %         if mod(tflage,round(total/3))==0
+        %             time=toc;
+        %             disp(['Percent : ' num2str(100*tflage/total,3) '%' ', Time : '...
+        %                 ,num2str(time/60,4),' mins'])
+        %         end
+        %         tflage=tflage+1;
+    end
+end
+
+for i = 1:size(fSNR_values,1)
+    for j = 1:size(fSNR_values,2)
+        if fSNR_values(i,j)~=0
+            if params.skip==1
+                v(flage)=fSNR_values(i,j);
+                xv(flage)=fSNR_i(i,j);
+                yv(flage)=fSNR_j(i,j);
+                flage=flage+1;
+            else
+                for x=1:params.skip
+                    for y=1:params.skip
+                        v(flage) = fSNR_values(i,j);
+                        xv(flage) = min(fSNR_i(i,j)+x-1,ox);
+                        yv(flage) = min(fSNR_j(i,j)+y-1,oy);
+                        flage=flage+1;
                     end
                 end
             end
         end
-        if mod(tflage,round(total/3))==0
-            time=toc;
-            disp(['Percent : ' num2str(100*tflage/total,3) '%' ', Time : '...
-                ,num2str(time/60,4),' mins'])
-        end
-        tflage=tflage+1;
     end
 end
+
+time = toc;
+disp(['rFRC mapping done' ', Time : ',num2str(time/60,4),' mins'])
+
 end
 
 function y=correction(x)
