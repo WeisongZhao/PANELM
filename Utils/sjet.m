@@ -1,6 +1,6 @@
 function shiftedjet = sjet
-shiftedjet=zeros(256,3,'uint8');
-roll=42;
+shiftedjet = zeros(256,3,'uint8');
+roll = 42;
 shiftedjet(1:roll,3)=linspace(0,255,roll);
 
 shiftedjet(roll+1:2*roll,3)=255*ones(1,roll);
@@ -22,7 +22,9 @@ shiftedjet(6*roll+1:256,1)=255*ones(1,4);
 shiftedjet(6*roll+1:256,2)=255*ones(1,4);
 shiftedjet(6*roll+1:256,3)=255*ones(1,4);
 %% for imagej
-% dlmwrite('sJet.lut',shiftedjet);
+if exist('sJet.lut','file')==0
+    dlmwrite('sJet.lut',shiftedjet);
+end
 %% for matlab
 shiftedjet = double(shiftedjet);
 shiftedjet = shiftedjet./255;
