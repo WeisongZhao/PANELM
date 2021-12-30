@@ -26,7 +26,7 @@ Pixel-level ANalysis of Error Locations (or resolution) with Matlab is distribut
 ## Usage of PANEL in specific
 
 - **Error mapping** of reconstructions without Ground-Truth (Reconstruction-1 vs Reconstruction-2) | 3σ curve is recommended;
-- **Error mapping** of low-level deep-learning predictions without Ground-Truth (Prediction-1 vs Prediction-2) | 3σ curve is recommended;
+- **Error mapping** of deep-learning predictions of low-level vision tasks without Ground-Truth (Prediction-1 vs Prediction-2) | 3σ curve is recommended;
 - **Error mapping** of reconstructions/predictions with Ground-Truth (Reconstruction/Prediction vs Ground-Truth) | 3σ curve is recommended.
 - **Resolution mapping** of raw images (Image-1 vs Image-2) | 1/7 hard threshold is recommended;
 
