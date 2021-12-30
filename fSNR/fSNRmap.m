@@ -1,9 +1,9 @@
-function [xv,yv,v]=fSNRmap(stackraw,params)
+function [xv,yv,v] = fSNRmap(stackraw,params)
 
-[ox,oy,~]=size(stackraw);
-bsize=params.blocksize;
+[ox,oy,~] = size(stackraw);
+bsize = params.blocksize;
 if mod(bsize,2)~=0
-    bsize=bsize+1;
+    bsize = bsize + 1;
 end
 
 if params.IF_adaptive_boundary && params.boundary
@@ -16,16 +16,16 @@ else
     background = ones(size(stackraw)) * params.boundaryintensity * 2/255;
 end
 
-stackraw=padarray(stackraw,[bsize/2,bsize/2,0],'symmetric');
-background=padarray(background,[bsize/2,bsize/2,0],'symmetric');
-flage=1;
+stackraw = padarray(stackraw,[bsize/2,bsize/2,0],'symmetric');
+background = padarray(background,[bsize/2,bsize/2,0],'symmetric');
+flage = 1;
 
 % tflage=1;
 % total=length(1:params.skip:ox)*length(1:params.skip:oy);
 
-v(1)=0;
-xv(1)=1;
-yv(1)=1;
+v(1) = 0;
+xv(1) = 1;
+yv(1) = 1;
 center = params.skip - 1;
 tic
 iindex = 1:params.skip:ox;
@@ -35,15 +35,15 @@ fSNR_i = fSNR_values;
 fSNR_j = fSNR_values;
 for i_= 1:length(iindex)
     i = iindex(i_);
-    for j_=1:length(jindex)
+    parfor j_ = 1:length(jindex)
         j = jindex(j_);
         minres = 0;
-        a=stackraw(i:i+bsize-1,j:j+bsize-1,1);
-        b=stackraw(i:i+bsize-1,j:j+bsize-1,2);
+        a = stackraw(i:i+bsize-1,j:j+bsize-1,1);
+        b = stackraw(i:i+bsize-1,j:j+bsize-1,2);
         % aboundary=a( bsize/2-center: bsize/2+center,bsize/2-center: bsize/2+center);
         % bboundary=b( bsize/2-center: bsize/2+center,bsize/2-center: bsize/2+center);
-        aboundary=a(bsize/2: bsize/2+center,bsize/2: bsize/2+center);
-        bboundary=b(bsize/2: bsize/2+center,bsize/2: bsize/2+center);
+        aboundary = a(bsize/2: bsize/2 + center,bsize/2: bsize/2 + center);
+        bboundary = b(bsize/2: bsize/2 + center,bsize/2: bsize/2 + center);
         if params.boundary
             if ~params.IF_adaptive_boundary
                 threshold = params.boundaryintensity * 2/255;
@@ -52,9 +52,9 @@ for i_= 1:length(iindex)
             end
         end
         if mean(aboundary(:) + bboundary(:)) > threshold
-            a=a./max(a(:));
-            b=b./max(b(:));
-            FRCresult= FRCAnalysis(a, b,params);
+            a = a./max(a(:));
+            b = b./max(b(:));
+            FRCresult = FRCAnalysis(a, b,params);
             % ifmask(1)=(FRCresult.Resolution.fixedThreshold_largeAngles);
             ifmask = [FRCresult.Resolution.twoSigma_largeAngles,...
                 FRCresult.Resolution.threeSigma_largeAngles,...
@@ -75,18 +75,18 @@ for i_= 1:length(iindex)
             end
             
             if params.enableSingleFrame
-                point = FRCresult.CutOff.threeSigma_largeAngles/ length(FRCresult.ThreeSigma);
+                point = FRCresult.CutOff.threeSigma_largeAngles / length(FRCresult.ThreeSigma);
                 
                 if isnan(point)
-                    point=FRCresult.CutOff.fiveSigma_largeAngles/ length(FRCresult.FiveSigma);
+                    point = FRCresult.CutOff.fiveSigma_largeAngles / length(FRCresult.FiveSigma);
                 else
-                    minres=minres/correction(point);
+                    minres = minres / correction(point);
                 end
                 if isnan(point)
-                    point=FRCresult.CutOff.twoSigma_largeAngles/ length(FRCresult.TwoSigma);
-                    minres=minres/correction(point)/(2/3);
+                    point = FRCresult.CutOff.twoSigma_largeAngles / length(FRCresult.TwoSigma);
+                    minres = minres/correction(point)/(2/3);
                 else
-                    minres=minres/correction(point)/(5/3);
+                    minres = minres/correction(point)/(5/3);
                 end
                 
             end

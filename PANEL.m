@@ -31,6 +31,7 @@ function [FRCMap,PANELs,RSM,absolute_value,SR_convolve_rsf]...
 %IF_adaptive_boundary  |  whether adaptive background threshold {default: false}
 %amedianfilter  |  whether do adaptive filter after rFRC mapping {default: true}
 %EnableOstu  |  whether enable otsu filter in PANEL merging {default: true}
+%mapping0143  |  whether use 1/7 threshold {default: false}
 %***************************************************************************
 %Output:
 %  rFRC map, Full PANEL, RSM, metrics, SRstack convoluted by RSF
@@ -61,6 +62,7 @@ function [FRCMap,PANELs,RSM,absolute_value,SR_convolve_rsf]...
 %    along with this program.  If not, see:
 %    <https://opendatacommons.org/licenses/odbl/>.
 %***************************************************************************
+warning off;
 %-------image property----------
 % if low SNR LR
 params.lowdose = false;
@@ -83,6 +85,7 @@ params.IF_adaptive_boundary = false;
 params.amedianfilter = true;
 params.LRstack = zeros(size(SRstack));
 params.EnableOtsu = true;
+params.mapping0143 = false;
 %%
 addpath('.\Utils')
 addpath('.\fSNR')

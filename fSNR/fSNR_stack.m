@@ -72,7 +72,11 @@ end
 
 %% fSNR(FRC) map estimation
 if params.enableSingleFrame
-    [xv,yv,v] = fSNRmap(stack(:,:,1:2),params);
+    if params.mapping0143
+        [xv,yv,v] = fSNRmap0143(stack(:,:,1:2),params);
+    else
+        [xv,yv,v] = fSNRmap(stack(:,:,1:2),params);
+    end
     v(v<1000 * params.pixelSize*2.3) = 1000 * params.pixelSize * 2.3;
     [xv2,yv2,v2] = fSNRmap(stack(:,:,3:4),params);
     v2(v2<1000 * params.pixelSize*2.3) = 1000 * params.pixelSize * 2.3;
@@ -94,7 +98,11 @@ if params.enableSingleFrame
     FRCMl(2:2:end,2:2:end) = FRCM;
     FRCM=FRCMl;
 else
-    [xv,yv,v]=fSNRmap(stack,params);
+    if params.mapping0143
+        [xv,yv,v]=fSNRmap0143(stack,params);
+    else
+        [xv,yv,v]=fSNRmap(stack,params);
+    end
     v(v<1000 * params.pixelSize * 2.3) = 1000 * params.pixelSize * 2.3;
     FRCM=zeros(ox,oy,'single');
     for i=1:length(v)

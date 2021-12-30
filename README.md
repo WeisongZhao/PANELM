@@ -30,7 +30,7 @@ Pixel-level ANalysis of Error Locations (or resolution) with Matlab is distribut
 - **Error mapping** of reconstructions/predictions with Ground-Truth (Reconstruction/Prediction vs Ground-Truth) | 3σ curve is recommended.
 - **Resolution mapping** of raw images (Image-1 vs Image-2) | 1/7 hard threshold is recommended;
 
-**Notably, when two-frame is not accessible, two alternative strategies for single-frame mapping is also provided (but not stable).** 
+**Notably, when two-frame is not accessible, two alternative strategies for single-frame mapping is also provided (but not stable, the two-frame version is recommended).** 
 
 ## PANELM for error mapping
 <p align='center'>

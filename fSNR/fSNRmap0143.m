@@ -1,4 +1,4 @@
-function [xv,yv,v]=fSNRmap(stackraw,params)
+function [xv,yv,v]=fSNRmap0143(stackraw,params)
 
 [ox,oy,~]=size(stackraw);
 bsize=params.blocksize;
@@ -35,7 +35,7 @@ fSNR_i = fSNR_values;
 fSNR_j = fSNR_values;
 for i_= 1:length(iindex)
     i = iindex(i_);
-    for j_=1:length(jindex)
+    parfor j_=1:length(jindex)
         j = jindex(j_);
         minres = 0;
         a=stackraw(i:i+bsize-1,j:j+bsize-1,1);
@@ -60,18 +60,18 @@ for i_= 1:length(iindex)
                 FRCresult.Resolution.threeSigma_largeAngles];
             
             minres = ifmask(1);
-            if isnan(minres)
-                minres = ifmask(2);
-                if params.enableSingleFrame ~= 1
-                    minres = minres/1.1;
-                end
-            end
+%             if isnan(minres)
+%                 minres = ifmask(2);
+%                 if params.enableSingleFrame ~= 1
+%                     minres = minres/1.1;
+%                 end
+%             end
             
             if params.enableSingleFrame
                 point=FRCresult.CutOff.fixedThreshold_largeAngles/ length(FRCresult.FixedThreshold);
                 if isnan(point)
-                    point=FRCresult.CutOff.threeSigma_largeAngles/ length(FRCresult.ThreeSigma);
-                    minres=minres/correction(point)/(1.1);
+%                     point=FRCresult.CutOff.threeSigma_largeAngles/ length(FRCresult.ThreeSigma);
+%                     minres=minres/correction(point)/(1.1);
                 else
                     minres=minres/correction(point);
                 end
