@@ -23,20 +23,12 @@ function [result] =  FRCAnalysis(im1, im2, params)
 %   theta:              if set, for each ring split the FRC analysis for pixels in the
 %                       frequency domain for which -theta < angle < +theta
 %                       (0 rad). 0 <= theta <= (pi/2)
-%   title:              the title of the displayed image
 %
 %
 % Output parameters:
 %   result:             struct containing all parameters and result of the
 %                       FRC analysis
 %
-% History
-% Version 1.0
-% Date: 11/06/2017
-%
-% Authors: Giorgio Tortarolo, Marco Castello, Giuseppe Vicidomini
-% Molecular Microscopy and Spectroscopy
-% Istituto Italiano di Tecnologia, Genoa, Italy
 
 
 params.meanFilterWidth = 3;
