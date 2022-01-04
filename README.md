@@ -23,14 +23,21 @@ Pixel-level ANalysis of Error Locations (or resolution) with Matlab is distribut
 <br>
 <br>
 
+If you are not a Matlab user, you can have a try on the imagej version of PANEL: [PANELJ](https://github.com/WeisongZhao/PANELJ).
+
 ## Usage of PANEL in specific
 
-- **Error mapping** of reconstructions without Ground-Truth (Reconstruction-1 vs Reconstruction-2) | 3σ curve is recommended;
-- **Error mapping** of deep-learning predictions of low-level vision tasks without Ground-Truth (Prediction-1 vs Prediction-2) | 3σ curve is recommended;
-- **Error mapping** of reconstructions/predictions with Ground-Truth (Reconstruction/Prediction vs Ground-Truth) | 3σ curve is recommended;
+**Error types:** There are exiting two major categories of reconstruction errors/artifacts in computational microscopy imaging, including the `model errors` and the `data errors`. The `model errors` are primarily caused by the difference between the artificially created estimation model and its physical, real-world counterpart, which can be detected and minimized by careful calibration of the optical microscopy system or enough training data in learning-based applications. The `data errors` are mostly introduced by joint effects of the noise condition and sampling capability of the hardware equipment. Notably, different from the `model errors`, the `data errors` are free from the model, inevitable, and may be hard to be suppressed by system calibration or adding more training datasets.
+
+**PANEL is capable of:**
+- **Data error mapping** of reconstructions without Ground-Truth (Reconstruction-1 vs Reconstruction-2) | 3σ curve is recommended;
+- **Data error and leaked model error mapping** of deep-learning predictions of low-level vision tasks without Ground-Truth (Prediction-1 vs Prediction-2) | 3σ curve is recommended;
+- **Full error mapping** of reconstructions/predictions with Ground-Truth (Reconstruction/Prediction vs Ground-Truth) | 3σ curve is recommended;
 - **Resolution mapping** of raw images (Image-1 vs Image-2) | 1/7 hard threshold or 3σ curve are both feasible;
 
-**Notably, when two-frame is not accessible, two alternative strategies for single-frame mapping is also provided (but not stable, the two-frame version is recommended).** 
+**When two-frame is not accessible, two alternative strategies for single-frame mapping is also provided (but not stable, the two-frame version is recommended).** 
+
+**WARNING**: The current single-frame error/resolution mapping feature is still an unstable `beta version`.
 
 ## PANELM for error mapping
 <p align='center'>
@@ -47,8 +54,6 @@ Pixel-level ANalysis of Error Locations (or resolution) with Matlab is distribut
 
 ## Declaration
 This repository contains the Maltab source code for <b>PANEL</b> .  
-
-If you are not a Matlab user, you can have a try on the imagej version of PANEL: [PANELJ](https://github.com/WeisongZhao/PANELJ).
 
 Here is an example dataset [HDSMLM_20nmpixel_background_15.tif](https://github.com/WeisongZhao/PANELM/releases/download/v0.3.0/HDSMLM_20nmpixel_background_15.tif) and [its wide-field image](https://github.com/WeisongZhao/PANELM/releases/download/v0.3.0/HDWF.tif).
 
