@@ -93,9 +93,11 @@ addpath('.\RSM')
 if nargin > 1
     params = read_params(params, varargin);
 end
+if sum(params.LRstack(:)) == 0
+    params.EnableRSM = false;
+end
 tic
 disp(['PANEL estimation start...'])
-
 [xs,ys,t]=size(SRstack);
 SR=double(SRstack);
 if params.EnableRSM == 1

@@ -46,13 +46,20 @@ end
 if params.driftCorrection
     params.roiRadius = 5;
     params.maxIterations = 200;
+    if ox ~= oy
+        stack = padarray(stack,[max(ox,oy) - size(stack,1)...
+            ,max(ox,oy) - size(stack,2),0],'post');
+    end
+    dimen = max(ox,oy);
     [~ , Shift] = DriftDetect (stack(:,:,1), stack(:,:,2), ...
         'maxIterations', params.maxIterations, 'roiRadius', params.roiRadius);  %Find shift
-    [xF,yF] = meshgrid(-floor(ox/2):-floor(ox/2)+ox-1,-floor(oy/2):-floor(oy/2)+oy-1); %Define shift in frequency domain
+    [xF,yF] = meshgrid(-floor(dimen/2):-floor(dimen/2)+dimen-1,...
+        -floor(dimen/2):-floor(dimen/2)+dimen-1); %Define shift in frequency domain
     fftB = fftshift(fft2(stack(:,:,2)));
     fftB = fftB.*exp(-1i*2*pi.*((-xF*Shift(1))/ox+(-yF*Shift(2))/oy))+eps; %Perform the shift
     B = abs(real(ifft2(ifftshift(fftB))));
     stack(:,:,2) = B./max(max(B));
+    stack=stack(1:ox,1:oy,:);
     fprintf(strcat('', 'SubPixel Shift:', '\n', ...
         num2str(Shift(1)),' pixels in x;' , '\n', ...
         num2str(Shift(2)),' pixels in y.', '\n' ));
