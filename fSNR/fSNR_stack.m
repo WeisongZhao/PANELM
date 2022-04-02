@@ -43,7 +43,7 @@ if params.IS3D == 0
 end
 
 %% drift correstion
-if params.driftCorrection
+if params.driftCorrection && ~params.enableSingleFrame
     params.roiRadius = 5;
     params.maxIterations = 200;
     if ox ~= oy
@@ -63,29 +63,18 @@ if params.driftCorrection
     fprintf(strcat('', 'SubPixel Shift:', '\n', ...
         num2str(Shift(1)),' pixels in x;' , '\n', ...
         num2str(Shift(2)),' pixels in y.', '\n' ));
-    if params.enableSingleFrame
-        [~ , Shift] = DriftDetect (stack(:,:,3), stack(:,:,4), ...
-            'maxIterations', params.maxIterations, 'roiRadius', params.roiRadius);  %Find shift
-        [xF,yF] = meshgrid(-floor(ox/2):-floor(ox/2)+ox-1,-floor(oy/2):-floor(oy/2)+oy-1); %Define shift in frequency domain
-        fftB = fftshift(fft2(stack(:,:,4)));
-        fftB = fftB.*exp(-1i*2*pi.*((-xF*Shift(1))/ox+(-yF*Shift(2))/oy))+eps; %Perform the shift
-        B = abs(real(ifft2(ifftshift(fftB))));
-        stack(:,:,4)=B./max(max(B));
-        fprintf(strcat('', 'SubPixel Shift:', '\n', ...
-            num2str(Shift(1)),' pixels in x;' , '\n', ...
-            num2str(Shift(2)),' pixels in y.', '\n' ));
-    end
 end
 
 %% fSNR(FRC) map estimation
 if params.enableSingleFrame
     if params.mapping0143
         [xv,yv,v] = fSNRmap0143(stack(:,:,1:2),params);
+        [xv2,yv2,v2] = fSNRmap0143(stack(:,:,3:4),params);
     else
         [xv,yv,v] = fSNRmap(stack(:,:,1:2),params);
+        [xv2,yv2,v2] = fSNRmap(stack(:,:,3:4),params);
     end
-    v(v<1000 * params.pixelSize*2.3) = 1000 * params.pixelSize * 2.3;
-    [xv2,yv2,v2] = fSNRmap(stack(:,:,3:4),params);
+    v(v<1000 * params.pixelSize*2.3) = 1000 * params.pixelSize * 2.3;   
     v2(v2<1000 * params.pixelSize*2.3) = 1000 * params.pixelSize * 2.3;
     FRCM = zeros(ox/2,oy/2,'single');
     FRCM2 = zeros(ox/2,oy/2,'single');
