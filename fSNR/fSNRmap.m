@@ -55,20 +55,26 @@ for i_= 1:length(iindex)
             a = a./max(a(:));
             b = b./max(b(:));
             FRCresult = FRCAnalysis(a, b,params);
-            % ifmask(1)=(FRCresult.Resolution.fixedThreshold_largeAngles);
-            ifmask = [FRCresult.Resolution.twoSigma_largeAngles,...
+            ifmask = [FRCresult.Resolution.fixedThreshold_largeAngles...
+                FRCresult.Resolution.twoSigma_largeAngles,...
                 FRCresult.Resolution.threeSigma_largeAngles,...
                 FRCresult.Resolution.fiveSigma_largeAngles];
             
-            minres = ifmask(2);
+            minres = ifmask(3);
             if isnan(minres)
-                minres = ifmask(3);
+                minres = ifmask(4);
                 if params.enableSingleFrame ~= 1
                     minres = minres / (5/3);
                 end
             end
             if isnan(minres)
                 minres = ifmask(1);
+                if params.enableSingleFrame ~= 1
+                    minres = minres * 1.143;
+                end
+            end            
+            if isnan(minres)
+                minres = ifmask(2);
                 if params.enableSingleFrame ~= 1
                     minres = minres / (2/3);
                 end
