@@ -152,18 +152,21 @@ FRCMap = fSNR_stack(single(SR),params);
 disp('Essemble...')
 PANELs=RGBnor(RSM,FRCMap,params.EnableOtsu);
 
-inter=FRCMap;
-inter(inter==0) = max(inter(:));
+inter = FRCMap;
+maxfrc = max(FRCMap(:));
+inter(inter==0) = maxfrc;
 minfrc = min(inter(:));
 remove0 = FRCMap;
 remove0(remove0 > 0)=1;
 FRC_absolute=(sum(FRCMap(:))./sum(remove0(:))./minfrc)-1;
 FRC_mean=(sum(FRCMap(:))./sum(remove0(:)));
-absolute_value=[FRC_absolute,FRC_mean,RSE,RSP,RSSIM];
+absolute_value=[FRC_absolute,FRC_mean,minfrc,maxfrc,RSE,RSP,RSSIM];
 fprintf(strcat('Absolute score of error:', '\n', ...
-    num2str(absolute_value(1)),' fSNR' , '\n', ...
+    num2str(absolute_value(1)),' rFRC value' , '\n', ...
     num2str(absolute_value(2)),' nm, mean resolution' , '\n', ...
-    num2str(absolute_value(3)),' RSE', '\n' ));
+    num2str(absolute_value(3)),' nm, minimum resolution' , '\n', ...  
+    num2str(absolute_value(4)),' nm, maximum resolution' , '\n', ...        
+    num2str(absolute_value(5)),' RSE', '\n' ));
 
 disp('PANEL estimation done, thank you for your waiting')
 
