@@ -70,7 +70,7 @@ for r = 0 : rMax
     %     end
     
 end
-threeSigma(threeSigma>1)=0;
-fiveSigma(fiveSigma>1)=0;
-twoSigma(twoSigma>1)=0;
+threeSigma(threeSigma>1)=1;
+fiveSigma(fiveSigma>1)=1;
+twoSigma(twoSigma>1)=1;
 end
