@@ -11,7 +11,7 @@
 <p>
 <h1 align="center">PANEL<font color="red">M</font></h1>
 <h6 align="right">v0.4.5</h6>
-<h5 align="center">Pixel-level ANalysis of Error Locations (or resolution) with Matlab.</h5>
+<h5 align="center">rFRC mapping and PANEL pinpointing with Matlab.</h5>
 </p>
 <br>
 <p>

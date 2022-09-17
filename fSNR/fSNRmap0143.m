@@ -7,8 +7,8 @@ if mod(bsize,2)~=0
 end
 
 if params.IF_adaptive_boundary && params.boundary
-    background(:,:,1) = background_estimation(255 * stackraw(:,:,1));
-    background(:,:,2) = background_estimation(255 * stackraw(:,:,2));
+    background(:,:,1) = background_estimation(stackraw(:,:,1));
+    background(:,:,2) = background_estimation(stackraw(:,:,2));
     background(background < 0) = 0;
     background = background./max(background(:));
     background = (params.boundaryintensity * 4/255) * background;
