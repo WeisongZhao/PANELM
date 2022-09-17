@@ -35,7 +35,7 @@ fSNR_i = fSNR_values;
 fSNR_j = fSNR_values;
 for i_= 1:length(iindex)
     i = iindex(i_);
-    parfor j_ = 1:length(jindex)
+    for j_ = 1:length(jindex)
         j = jindex(j_);
         minres = 0;
         a = stackraw(i:i+bsize-1,j:j+bsize-1,1);
@@ -72,7 +72,7 @@ for i_= 1:length(iindex)
                 if params.enableSingleFrame ~= 1
                     minres = minres * 1.143;
                 end
-            end            
+            end
             if isnan(minres)
                 minres = ifmask(2);
                 if params.enableSingleFrame ~= 1

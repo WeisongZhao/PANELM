@@ -1,7 +1,9 @@
 *.Java
 *.java
+*.tif
 HDSMLM_20nmpixel_background_15.tif
 LDSMLM_20nmpixel_background_15.tif
 HDWF.tif
 LDWF.tif
+OT.m
 *.log
