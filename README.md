@@ -27,7 +27,7 @@ If you are not a Matlab user, you can have a try on the imagej version of PANEL:
 
 ## Usages of rFRC and PANEL in specific
 
-**Uncertainty types:** There are exiting two major categories of reconstruction uncertainty in computational microscopy imaging, including the `model uncertainty` and the `data uncertainty`. The `model uncertainty` are primarily caused by the difference between the artificially created estimation model and its physical, real-world counterpart, which can be detected and minimized by careful calibration of the optical microscopy system or enough training data in learning-based applications. The `data uncertainty` are mostly introduced by joint effects of the noise condition and sampling capability of the hardware equipment. Notably, different from the `model uncertainty`, the `data uncertainty` are free from the model, inevitable, and may be hard to be suppressed by system calibration or adding more training datasets.
+The `rFRC` is for quantitatively mapping the local image quality (effective resolution, data uncertainty). The lower effective resolution gives a higher probability to the error existence, and thus we can use it to represent the uncertainty revealing the error distribution.
 
 **rFRC is capable of:**
 - **Data uncertainty mapping** of reconstructions without Ground-Truth (Reconstruction-1 vs Reconstruction-2) | 3σ curve is recommended;
@@ -39,7 +39,7 @@ If you are not a Matlab user, you can have a try on the imagej version of PANEL:
 
 **PANEL**
 
-- We accompany our `filtered rFRC` with `truncated RSM` ([resolution-scaled error map](http://dx.doi.org/10.1038/nmeth.4605)) as a `full PANEL` map, but this `RSM` is an optional feature that can be turn off as the wide-field reference being unavailable. `PANEL` is for biologists to qualitatively pinpoint regions with low reliability as a concise visualization
+- We also accompany our `filtered rFRC` with `truncated RSM` ([resolution-scaled error map](http://dx.doi.org/10.1038/nmeth.4605)) as a `full PANEL` map, but this `RSM` is an optional feature that can be turn off as the wide-field reference being unavailable. `PANEL` is for biologists to qualitatively pinpoint regions with low reliability as a concise visualization
 
 - Note that our `rFRC` and `PANEL` cannot fully pinpoint the unreliable regions induced by the model bias, which would require more extensive characterization and correction routines based on the underlying theory of the corresponding models.
 
