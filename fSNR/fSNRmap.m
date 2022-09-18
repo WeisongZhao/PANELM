@@ -68,18 +68,17 @@ for i_= 1:length(iindex)
                 end
             end
             if isnan(minres)
-                minres = ifmask(1);
-                if params.enableSingleFrame ~= 1
-                    minres = minres * 1.143;
-                end
-            end
-            if isnan(minres)
                 minres = ifmask(2);
                 if params.enableSingleFrame ~= 1
                     minres = minres / (2/3);
                 end
             end
-            
+%             if isnan(minres)
+%                 minres = ifmask(1);
+%                 if params.enableSingleFrame ~= 1
+%                     minres = minres * 1.143;
+%                 end
+%             end            
             if params.enableSingleFrame
                 point = FRCresult.CutOff.threeSigma_largeAngles / length(FRCresult.ThreeSigma);
                 

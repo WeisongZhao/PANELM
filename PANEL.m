@@ -96,6 +96,7 @@ end
 if sum(params.LRstack(:)) == 0
     params.EnableRSM = false;
 end
+params.skip = min(floor(params.blocksize/2),params.skip);
 tic
 disp(['PANEL estimation start...'])
 [xs,ys,t]=size(SRstack);

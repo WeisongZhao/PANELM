@@ -20,16 +20,18 @@
 
 rFRC (rolling Fourier ring correlation) mapping and PANEL (Pixel-level ANalysis of Error Locations) pinpointing with Matlab is distributed as accompanying software for publication: [Weisong Zhao et al. Quantitatively mapping local quality at super-resolution scale by rolling Fourier ring correlation, <!-- Nature Methods -->, X, XXX-XXX (2022)](https://www.nature.com/nmeth/). Please cite PANEL in your publications, if it helps your research.
 
+More details on [Wiki](https://github.com/WeisongZhao/PANELM/wiki/)
+
 <br>
 <br>
 
 If you are not a Matlab user, you can have a try on the imagej version of PANEL: [PANELJ](https://github.com/WeisongZhao/PANELJ).
 
-## Usage of PANELM in specific
+## Usages of rFRC and PANEL in specific
 
 **Uncertainty types:** There are exiting two major categories of reconstruction uncertainty in computational microscopy imaging, including the `model uncertainty` and the `data uncertainty`. The `model uncertainty` are primarily caused by the difference between the artificially created estimation model and its physical, real-world counterpart, which can be detected and minimized by careful calibration of the optical microscopy system or enough training data in learning-based applications. The `data uncertainty` are mostly introduced by joint effects of the noise condition and sampling capability of the hardware equipment. Notably, different from the `model uncertainty`, the `data uncertainty` are free from the model, inevitable, and may be hard to be suppressed by system calibration or adding more training datasets.
 
-**PANEL is capable of:**
+**rFRC is capable of:**
 - **Data uncertainty mapping** of reconstructions without Ground-Truth (Reconstruction-1 vs Reconstruction-2) | 3σ curve is recommended;
 - **Data uncertainty and leaked model uncertainty mapping** of deep-learning predictions of low-level vision tasks without Ground-Truth (Prediction-1 vs Prediction-2) | 3σ curve is recommended;
 - **Full error mapping** of reconstructions/predictions with Ground-Truth (Reconstruction/Prediction vs Ground-Truth) | 3σ curve is recommended;
@@ -37,9 +39,14 @@ If you are not a Matlab user, you can have a try on the imagej version of PANEL:
 
 **When two-frame is not accessible, two alternative strategies for single-frame mapping is also provided (not stable, the two-frame version is recommended).** 
 
-**WARNING**: The current single-frame error/resolution mapping feature is still an unstable `beta version`.
+**PANEL**
 
-## PANELM for error mapping
+- We accompany our `filtered rFRC` with `truncated RSM` (resolution-scaled error map) as a `full PANEL` map, but this `RSM` is an optional feature that can be turn off as the wide-field reference being unavailable. `PANEL` is for biologists to qualitatively pinpoint regions with low reliability as a concise visualization
+
+- Note that our `rFRC` and `PANEL` cannot fully pinpoint the unreliable regions induced by the model bias, which would require more extensive characterization and correction routines based on the underlying theory of the corresponding models.
+
+
+## PANELM for local quality mapping
 <p align='center'>
 <img src='./img/PANELM.png' align="center" width=900>
 </p>
