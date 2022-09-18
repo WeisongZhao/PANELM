@@ -18,7 +18,7 @@
 <img src='./img/MATLAB.jpg' align="left" width=120>
 </p>
 
-rFRC (rolling Fourier ring correlation) mapping and PANEL (Pixel-level ANalysis of Error Locations) pinpointing with Matlab is distributed as accompanying software for publication: [Weisong Zhao et al. Quantitatively mapping local quality at super-resolution scale by rolling Fourier ring correlation, <!-- Nature Methods -->, X, XXX-XXX (2022)](https://www.nature.com/nmeth/). Please cite PANEL in your publications, if it helps your research. More details on [Wiki](https://github.com/WeisongZhao/PANELM/wiki/)
+rFRC (rolling Fourier ring correlation) mapping and PANEL (Pixel-level ANalysis of Error Locations) pinpointing with Matlab is distributed as accompanying software for publication: [Weisong Zhao et al. Quantitatively mapping local quality at super-resolution scale by rolling Fourier ring correlation, <!-- Nature Methods -->, X, XXX-XXX (2022)](https://www.nature.com/nmeth/). More details on [Wiki](https://github.com/WeisongZhao/PANELM/wiki/). If it helps your research, please cite our work in your publications. 
 
 <br>
 <br>
