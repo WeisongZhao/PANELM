@@ -39,7 +39,7 @@ If you are not a Matlab user, you can have a try on the imagej version of PANEL:
 
 **PANEL**
 
-- We accompany our `filtered rFRC` with `truncated RSM` (resolution-scaled error map) as a `full PANEL` map, but this `RSM` is an optional feature that can be turn off as the wide-field reference being unavailable. `PANEL` is for biologists to qualitatively pinpoint regions with low reliability as a concise visualization
+- We accompany our `filtered rFRC` with `truncated RSM` ([resolution-scaled error map](http://dx.doi.org/10.1038/nmeth.4605)) as a `full PANEL` map, but this `RSM` is an optional feature that can be turn off as the wide-field reference being unavailable. `PANEL` is for biologists to qualitatively pinpoint regions with low reliability as a concise visualization
 
 - Note that our `rFRC` and `PANEL` cannot fully pinpoint the unreliable regions induced by the model bias, which would require more extensive characterization and correction routines based on the underlying theory of the corresponding models.
 
@@ -56,11 +56,6 @@ If you are not a Matlab user, you can have a try on the imagej version of PANEL:
 - v0.2.0 RSM and PANEL visualization
 - v0.1.0 Initial rFRC mapping
 
-
-## Declaration
-This repository contains the Maltab source code for <b>PANEL</b> .  
-
-Here is an example dataset [HDSMLM_20nmpixel_background_15.tif](https://github.com/WeisongZhao/PANELM/releases/download/v0.3.0/HDSMLM_20nmpixel_background_15.tif) and [its wide-field image](https://github.com/WeisongZhao/PANELM/releases/download/v0.3.0/HDWF.tif).
 
 ## Open source [PANELM](https://github.com/WeisongZhao/PANELM)
 - This software and corresponding methods can only be used for **non-commercial** use, and they are under Open Data Commons Open Database License v1.0.
