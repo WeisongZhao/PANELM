@@ -64,19 +64,19 @@ for i_= 1:length(iindex)
             if isnan(minres)
                 minres = ifmask(4);
                 if params.enableSingleFrame ~= 1
-                    minres = minres / (5/3);
+                    minres = minres / (5/3)^2;
                 end
             end
             if isnan(minres)
                 minres = ifmask(2);
                 if params.enableSingleFrame ~= 1
-                    minres = minres / (2/3);
+                    minres = minres / (2/3)^2;
                 end
             end
 %             if isnan(minres)
 %                 minres = ifmask(1);
 %                 if params.enableSingleFrame ~= 1
-%                     minres = minres * 1.143;
+%                     minres = minres * 1.143^2;
 %                 end
 %             end            
             if params.enableSingleFrame
