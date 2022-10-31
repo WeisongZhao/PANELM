@@ -42,7 +42,7 @@ The `rFRC` is for quantitatively mapping the local image quality (effective reso
 
 - We also accompany our `filtered rFRC` with `truncated RSM` ([resolution-scaled error map](http://dx.doi.org/10.1038/nmeth.4605)) as a `full PANEL` map, but this `RSM` is an optional feature that can be turn off as the wide-field reference being unavailable. `PANEL` is for biologists to qualitatively pinpoint regions with low reliability as a concise visualization
 
-- Note that our `rFRC` and `PANEL` cannot fully pinpoint the unreliable regions induced by the model bias, which would require more extensive characterization and correction routines based on the underlying theory of the corresponding models.
+- Note that our `rFRC` and `PANEL` using two independent captures cannot fully pinpoint the unreliable regions induced by the model bias, which would require more extensive characterization and correction routines based on the underlying theory of the corresponding models.
 
 
 ## PANELM for local quality mapping
