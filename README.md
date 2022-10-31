@@ -23,7 +23,7 @@ rFRC (rolling Fourier ring correlation) mapping and PANEL (Pixel-level ANalysis 
 <br>
 <br>
 
-If you are not a Matlab user, you can have a try on the imagej version of PANEL: [PANELJ](https://github.com/WeisongZhao/PANELJ).
+If you are not a Matlab user, you can have a try on the imagej version: [PANELJ](https://github.com/WeisongZhao/PANELJ), or the Python version: [PANELpy](https://github.com/WeisongZhao/PANELpy).
 
 ## Usages of rFRC and PANEL in specific
 
