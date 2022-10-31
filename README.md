@@ -31,7 +31,8 @@ The `rFRC` is for quantitatively mapping the local image quality (effective reso
 
 **rFRC is capable of:**
 - **Data uncertainty mapping** of reconstructions without Ground-Truth (Reconstruction-1 vs Reconstruction-2) | 3σ curve is recommended;
-- **Data uncertainty and leaked model uncertainty mapping** of deep-learning predictions of low-level vision tasks without Ground-Truth (Prediction-1 vs Prediction-2) | 3σ curve is recommended;
+- **Data uncertainty and leaked model uncertainty mapping** of deep-learning predictions of low-level vision tasks without Ground-Truth (Prediction-1 from input-1 vs Prediction-2 from input-2) | 3σ curve is recommended;
+- **Model uncertainty mapping** of deep-learning predictions of low-level vision tasks without Ground-Truth (Prediction-1 from model-1 vs Prediction-2 from model-2) | 3σ curve is recommended;
 - **Full error mapping** of reconstructions/predictions with Ground-Truth (Reconstruction/Prediction vs Ground-Truth) | 3σ curve is recommended;
 - **Resolution mapping** of raw images (Image-1 vs Image-2) | 1/7 hard threshold or 3σ curve are both feasible;
 
