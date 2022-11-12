@@ -1,6 +1,6 @@
 
 [![website](https://img.shields.io/badge/website-up-green.svg)](https://weisongzhao.github.io/PANELM/)
-[![paper](https://img.shields.io/badge/paper-nat.%20methods-black.svg)](https://www.nature.com/nmeth/)
+[![paper](https://img.shields.io/badge/paper-nat.%20biotech-black.svg)](https://www.nature.com/nbt/)
 [![Github commit](https://img.shields.io/github/last-commit/WeisongZhao/PANELM)](https://github.com/WeisongZhao/PANELM/)
 [![License](https://img.shields.io/github/license/WeisongZhao/PANELM)](https://github.com/WeisongZhao/PANELM/blob/master/LICENSE/)<br>
 [![Twitter](https://img.shields.io/twitter/follow/weisong_zhao?label=weisong)](https://twitter.com/weisong_zhao/status/1370308101690118146)
@@ -18,7 +18,7 @@
 <img src='./img/MATLAB.jpg' align="left" width=120>
 </p>
 
-rFRC (rolling Fourier ring correlation) mapping and PANEL (Pixel-level ANalysis of Error Locations) pinpointing with Matlab is distributed as accompanying software for publication: [Weisong Zhao et al. Quantitatively mapping local quality at super-resolution scale by rolling Fourier ring correlation, <!-- Nature Methods -->, X, XXX-XXX (2022)](https://www.nature.com/nmeth/). More details on [Wiki](https://github.com/WeisongZhao/PANELM/wiki/). If it helps your research, please cite our work in your publications. 
+rFRC (rolling Fourier ring correlation) mapping and PANEL (Pixel-level ANalysis of Error Locations) pinpointing with Matlab is distributed as accompanying software for publication: [Weisong Zhao et al. Quantitatively mapping local quality at super-resolution scale by rolling Fourier ring correlation, <!-- Nature Biotechnology -->, X, XXX-XXX (2022)](https://www.nature.com/nbt/). More details on [Wiki](https://github.com/WeisongZhao/PANELM/wiki/). If it helps your research, please cite our work in your publications. 
 
 <br>
 <br>
