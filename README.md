@@ -1,6 +1,6 @@
 
 [![website](https://img.shields.io/badge/website-up-green.svg)](https://weisongzhao.github.io/PANELM/)
-[![paper](https://img.shields.io/badge/paper-nat.%20commun-black.svg)](https://www.nature.com/ncomms/)
+[![paper](https://img.shields.io/badge/paper-nat.%20commun.-black.svg)](https://www.nature.com/ncomms/)
 [![Github commit](https://img.shields.io/github/last-commit/WeisongZhao/PANELM)](https://github.com/WeisongZhao/PANELM/)
 [![License](https://img.shields.io/github/license/WeisongZhao/PANELM)](https://github.com/WeisongZhao/PANELM/blob/master/LICENSE/)<br>
 [![Twitter](https://img.shields.io/twitter/follow/weisong_zhao?label=weisong)](https://twitter.com/weisong_zhao/status/1370308101690118146)
