@@ -93,13 +93,21 @@ addpath('.\RSM')
 if nargin > 1
     params = read_params(params, varargin);
 end
+
+if size(SRstack,3) == 1 && params.enableSingleFrame == false
+    warning on;
+    params.enableSingleFrame = true;
+    warning(['Single SR image input!', newline , 'The single frame rFRC is active !']);
+    warning off;
+end
+
 if sum(params.LRstack(:)) == 0
     params.EnableRSM = false;
 end
 params.skip = min(floor(params.blocksize/2),params.skip);
 tic
 disp(['PANEL estimation start...'])
-[xs,ys,t]=size(SRstack);
+[xs,ys,~]=size(SRstack);
 SR=double(SRstack);
 if params.EnableRSM == 1
     LR=double(params.LRstack);
@@ -118,7 +126,7 @@ if params.lowdose
 end
 
 if mag(1) ~= 1 || mag(2) ~= 1
-    LR = fourierInterpolation(LR,floor(mag),'lateral');
+    LR = fourierInterpolation(LR,floor(mag(1:ndims(LR))),'lateral');
 end
 
 if params.EnableRSM == 1
