@@ -11,7 +11,7 @@ firstIntercept = -1;
 for sample = 4 : nSamples-1
     if(	(data (sample) < threshold(sample) ) && ...
             ( max( [data(sample-1), data(sample-2), data(sample-3)] ) > threshold(sample)) )
-        firstIntercept = sample;
+        firstIntercept = sample + 1;
         break;
     end
 end
