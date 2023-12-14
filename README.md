@@ -1,12 +1,14 @@
 
 [![website](https://img.shields.io/badge/website-up-green.svg)](https://weisongzhao.github.io/PANELM/)
-[![paper](https://img.shields.io/badge/paper-light:%20sci.%20appl.-black.svg)](https://www.nature.com/lsa/)
 [![Github commit](https://img.shields.io/github/last-commit/WeisongZhao/PANELM)](https://github.com/WeisongZhao/PANELM/)
-[![License](https://img.shields.io/github/license/WeisongZhao/PANELM)](https://github.com/WeisongZhao/PANELM/blob/master/LICENSE/)<br>
+[![Github All Releases](https://img.shields.io/github/downloads/WeisongZhao/PANELM/total.svg)](https://github.com/WeisongZhao/PANELM/releases/tag/v0.4.5/)
+[![License](https://img.shields.io/github/license/WeisongZhao/PANELM)](https://github.com/WeisongZhao/PANELJ/blob/master/LICENSE/)<br>
+[![paper](https://img.shields.io/badge/paper-light:%20sci.%20appl.-black.svg)](https://doi.org/10.1038/s41377-023-01321-0)
+[![post](https://img.shields.io/badge/post-behind%20the%20paper-black.svg)](https://communities.springernature.com/posts/a-nice-piece-of-the-puzzle-for-super-resolution-microscopy)<br>
 [![Twitter](https://img.shields.io/twitter/follow/weisong_zhao?label=weisong)](https://twitter.com/weisong_zhao/status/1370308101690118146)
-[![GitHub watchers](https://img.shields.io/github/watchers/WeisongZhao/PANELM?style=social)](https://github.com/WeisongZhao/PANELM/) 
-[![GitHub stars](https://img.shields.io/github/stars/WeisongZhao/PANELM?style=social)](https://github.com/WeisongZhao/PANELM/) 
-[![GitHub forks](https://img.shields.io/github/forks/WeisongZhao/PANELM?style=social)](https://github.com/WeisongZhao/PANELM/)
+[![GitHub watchers](https://img.shields.io/github/watchers/WeisongZhao/PANELJ?style=social)](https://github.com/WeisongZhao/PANELJ/) 
+[![GitHub stars](https://img.shields.io/github/stars/WeisongZhao/PANELJ?style=social)](https://github.com/WeisongZhao/PANELJ/) 
+[![GitHub forks](https://img.shields.io/github/forks/WeisongZhao/PANELJ?style=social)](https://github.com/WeisongZhao/PANELJ/)
 
 <p>
 <h1 align="center">PANEL<font color="red">M</font></h1>
@@ -18,7 +20,7 @@
 <img src='./img/MATLAB.jpg' align="left" width=120>
 </p>
 
-rFRC (rolling Fourier ring correlation) mapping and PANEL (Pixel-level ANalysis of Error Locations) pinpointing with Matlab is distributed as accompanying software for publication: [Weisong Zhao et al. Quantitatively mapping local quality of super-resolution microscopy by rolling Fourier ring correlation, Light: Science & Applications (2023)](https://doi.org/10.1101/2022.12.01.518675). More details on [Wiki](https://github.com/WeisongZhao/PANELM/wiki/). If it helps your research, please cite our work in your publications. 
+rFRC (rolling Fourier ring correlation) mapping and PANEL (Pixel-level ANalysis of Error Locations) pinpointing with Matlab is distributed as accompanying software for publication: [Weisong Zhao et al. Quantitatively mapping local quality of super-resolution microscopy by rolling Fourier ring correlation, Light: Science & Applications (2023)](https://doi.org/10.1038/s41377-023-01321-0). More details on [Wiki](https://github.com/WeisongZhao/PANELM/wiki/). If it helps your research, please cite our work in your publications. 
 
 <br>
 <br>
@@ -60,7 +62,10 @@ The `rFRC` is for quantitatively mapping the local image quality (effective reso
 ## Related links: 
 - ImageJ version: [PANELJ](https://github.com/WeisongZhao/PANELJ/)
 - Python version: [PANELM](https://github.com/WeisongZhao/PANELpy/)
-- **Preprint:** [Weisong Zhao et al., Quantitatively mapping local quality of super-resolution microscopy by rolling Fourier ring correlation, bioRxiv (2022).](https://doi.org/10.1101/2022.12.01.518675)
+- **Some fancy results and comparisons:** [my website](https://weisongzhao.github.io/MyWeb2/portfolio-4-col.html)
+- **Further reading:** [#behind_the_paper](https://communities.springernature.com/posts/a-nice-piece-of-the-puzzle-for-super-resolution-microscopy).
+- **Publication:**[Weisong Zhao et al. Quantitatively mapping local quality of super-resolution microscopy by rolling Fourier ring correlation, Light: Science & Applications (2023)](https://doi.org/10.1038/s41377-023-01321-0).
+- **Preprint:** [Weisong Zhao et al., Quantitatively mapping local quality of super-resolution microscopy by rolling Fourier ring correlation, bioRxiv (2022)](https://doi.org/10.1101/2022.12.01.518675).
 
 ## Open source [PANELM](https://github.com/WeisongZhao/PANELM)
 - This software and corresponding methods can only be used for **non-commercial** use, and they are under Open Data Commons Open Database License v1.0.
