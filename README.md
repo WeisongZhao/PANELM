@@ -2,13 +2,13 @@
 [![website](https://img.shields.io/badge/website-up-green.svg)](https://weisongzhao.github.io/PANELM/)
 [![Github commit](https://img.shields.io/github/last-commit/WeisongZhao/PANELM)](https://github.com/WeisongZhao/PANELM/)
 [![Github All Releases](https://img.shields.io/github/downloads/WeisongZhao/PANELM/total.svg)](https://github.com/WeisongZhao/PANELM/releases/tag/v0.4.5/)
-[![License](https://img.shields.io/github/license/WeisongZhao/PANELM)](https://github.com/WeisongZhao/PANELJ/blob/master/LICENSE/)<br>
+[![License](https://img.shields.io/github/license/WeisongZhao/PANELM)](https://github.com/WeisongZhao/PANELM/blob/master/LICENSE/)<br>
 [![paper](https://img.shields.io/badge/paper-light:%20sci.%20appl.-black.svg)](https://doi.org/10.1038/s41377-023-01321-0)
 [![post](https://img.shields.io/badge/post-behind%20the%20paper-black.svg)](https://communities.springernature.com/posts/a-nice-piece-of-the-puzzle-for-super-resolution-microscopy)<br>
 [![Twitter](https://img.shields.io/twitter/follow/weisong_zhao?label=weisong)](https://twitter.com/weisong_zhao/status/1370308101690118146)
-[![GitHub watchers](https://img.shields.io/github/watchers/WeisongZhao/PANELJ?style=social)](https://github.com/WeisongZhao/PANELJ/) 
-[![GitHub stars](https://img.shields.io/github/stars/WeisongZhao/PANELJ?style=social)](https://github.com/WeisongZhao/PANELJ/) 
-[![GitHub forks](https://img.shields.io/github/forks/WeisongZhao/PANELJ?style=social)](https://github.com/WeisongZhao/PANELJ/)
+[![GitHub watchers](https://img.shields.io/github/watchers/WeisongZhao/PANELM?style=social)](https://github.com/WeisongZhao/PANELM/) 
+[![GitHub stars](https://img.shields.io/github/stars/WeisongZhao/PANELM?style=social)](https://github.com/WeisongZhao/PANELM/) 
+[![GitHub forks](https://img.shields.io/github/forks/WeisongZhao/PANELM?style=social)](https://github.com/WeisongZhao/PANELM/)
 
 <p>
 <h1 align="center">PANEL<font color="red">M</font></h1>
