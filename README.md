@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/github/license/WeisongZhao/PANELM)](https://github.com/WeisongZhao/PANELM/blob/master/LICENSE/)<br>
 [![paper](https://img.shields.io/badge/paper-light:%20sci.%20appl.-black.svg)](https://doi.org/10.1038/s41377-023-01321-0)
 [![post](https://img.shields.io/badge/post-behind%20the%20paper-black.svg)](https://communities.springernature.com/posts/a-nice-piece-of-the-puzzle-for-super-resolution-microscopy)<br>
-[![Twitter](https://img.shields.io/twitter/follow/weisong_zhao?label=weisong)](https://twitter.com/weisong_zhao/status/1370308101690118146)
+[![Twitter](https://img.shields.io/twitter/follow/weisong_zhao?label=weisong)](https://twitter.com/hashtag/rFRCmetric?src=hashtag_click)
 [![GitHub watchers](https://img.shields.io/github/watchers/WeisongZhao/PANELM?style=social)](https://github.com/WeisongZhao/PANELM/) 
 [![GitHub stars](https://img.shields.io/github/stars/WeisongZhao/PANELM?style=social)](https://github.com/WeisongZhao/PANELM/) 
 [![GitHub forks](https://img.shields.io/github/forks/WeisongZhao/PANELM?style=social)](https://github.com/WeisongZhao/PANELM/)
