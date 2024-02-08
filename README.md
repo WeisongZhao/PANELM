@@ -62,7 +62,7 @@ The `rFRC` is for quantitatively mapping the local image quality (effective reso
 ## Related links: 
 - ImageJ version: [PANELJ](https://github.com/WeisongZhao/PANELJ/)
 - Python version: [PANELM](https://github.com/WeisongZhao/PANELpy/)
-- **Some fancy results and comparisons:** [my website](https://weisongzhao.github.io/MyWeb2/portfolio-4-col.html)
+- **Some fancy results and comparisons:** [my website](https://weisongzhao.github.io/home/portfolio-4-col.html#PANEL)
 - **Further reading:** [#behind_the_paper](https://communities.springernature.com/posts/a-nice-piece-of-the-puzzle-for-super-resolution-microscopy).
 - **Publication:**[Weisong Zhao et al. Quantitatively mapping local quality of super-resolution microscopy by rolling Fourier ring correlation, Light: Science & Applications (2023)](https://doi.org/10.1038/s41377-023-01321-0).
 - **Preprint:** [Weisong Zhao et al., Quantitatively mapping local quality of super-resolution microscopy by rolling Fourier ring correlation, bioRxiv (2022)](https://doi.org/10.1101/2022.12.01.518675).
